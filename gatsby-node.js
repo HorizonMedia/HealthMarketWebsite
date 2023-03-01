@@ -8,13 +8,15 @@ exports.createPages = async ({ graphql, actions }) => {
             allAgents {
                 nodes {
                     slug
+                    email
                     permalink
                 }
             }
         }`
     )
+    
 
-    agentData.data.allAgents.nodes.forEach(({ slug, permalink }) => {
+    agentData.data.allAgents.nodes.forEach(({ slug, email, permalink }) => {
         createRedirect({ fromPath: `/${slug}`, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug.replace(/\./g, '')}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
         createRedirect({ fromPath: `/${slug.replace(/\./g, '')}`, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug.replace(/\./g, '')}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
 
@@ -25,6 +27,8 @@ exports.createPages = async ({ graphql, actions }) => {
                 createRedirect({ fromPath: stripped, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug.replace(/\./g, '')}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
             }
         }
+        const emailStripped = email.split("@")[0]
+        createRedirect({ fromPath: emailStripped, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug.replace(/\./g, '')}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
     })
 
     articleRedirects.forEach(({ source, destination, status }) => {
