@@ -35,15 +35,15 @@ const HeaderRight = ({ headerData }: { headerData: any }) => {
 
   return (
     <Wrapper className="header-right">
-      <Item className="hide-at-device" style={{minWidth: '230px'}}>
+      <Item className="hide-at-device">
         <a href="tel:+18178134562">
           <img className="phone icon" src={PhoneIcon} alt="telephone icon" />
-          1-817-813-4562
+          1-817-813-4562, TTY 771
         </a>
       </Item>
       <AgentItem className="hide-at-device">
         <a className="find-agent" href="/local-health-insurance-agent/" onClick={routeLink}>
-          Find an agent
+          Find a licensed insurance agent
         </a>
       </AgentItem>
       <Item className="hide-at-device">
