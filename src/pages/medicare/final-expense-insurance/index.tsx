@@ -603,7 +603,7 @@ const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 38px;
+  padding: 0 42px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     margin-top: 64px;
@@ -780,10 +780,10 @@ const PageHeroFormStyled = styled(PageHeroForm)`
 
 const HeroMobileImg = styled.img`
   background: #E3DEDA;
-  margin: 0 auto;
+  margin: -112px auto 0;
   width: 100%;
   object-fit: cover;
-  height: 367px;
+  height: 441px;
   object-position: top;
   max-width: 400px;
 
