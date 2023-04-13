@@ -46,10 +46,8 @@ const MedicarePrescriptionDrugPage = () => {
                     <HeroDesktopImg src={HeroTmp} alt="Hero"/>
                     <HeroDesktopOpacity/>
                     <HeroPadding>
-                        {/*<MainTitle>{page.pageHeroFields.headline}</MainTitle>*/}
-                        <MainTitle>Compare final expense insurance plans</MainTitle>
-                        {/*<Subtitle>{page.pageHeroFields.subheadline}</Subtitle>*/}
-                        <Subtitle>Cover funeral and burial expenses so your family won't have to</Subtitle>
+                        <MainTitle>{page.pageHeroFields.headline}</MainTitle>
+                        <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
                         <PageHeroFormStyled
                             light
                             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
@@ -60,7 +58,10 @@ const MedicarePrescriptionDrugPage = () => {
                         />
                         <CallUsCtn>
                             <PhoneIcon/>
-                            <CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>
+                            <CallUsText>
+                                Call XXX-XXX-XXXX to speak to a licensed insurance agent
+                            </CallUsText>
+                            {/*<CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>*/}
                         </CallUsCtn>
                         <DisclaimerText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>
                     </HeroPadding>
