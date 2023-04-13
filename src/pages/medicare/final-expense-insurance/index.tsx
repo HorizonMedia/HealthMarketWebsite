@@ -65,8 +65,7 @@ const MedicarePrescriptionDrugPage = () => {
                         </CallUsCtn>
                         <DisclaimerText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>
                     </HeroPadding>
-                    <HeroMobileImg src={HeroTmp} alt="Hero"/>
-                    {/*<HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>*/}
+                    <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
                 </HeroContainer>
                 <SectionContainer>
                     <SectionColumns>
