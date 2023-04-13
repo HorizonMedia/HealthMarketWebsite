@@ -709,7 +709,7 @@ const DisclaimerText = styled.div`
 `;
 
 const MainTitle = styled.h1`
-  padding: 0 24px;
+  padding: 0;
 
   font-family: 'IvyPresto Display-SemiBold', serif;
 
@@ -722,7 +722,7 @@ const MainTitle = styled.h1`
 
   color: #4D4D4D;
 
-  margin: 0 auto 14px;
+  margin: 0 auto 20px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     color: #FFFFFF;
@@ -753,6 +753,7 @@ const Subtitle = styled.h2`
   text-align: center;
 
   color: #4D4D4D;
+  padding: 0 26px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     color: #FFFFFF;
