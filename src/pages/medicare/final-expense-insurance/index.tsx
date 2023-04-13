@@ -2,7 +2,7 @@
 import React from "react";
 
 // Query
-import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/useMedicarePrescriptionDrugPageQuery";
+import {useFinalExpensePageQuery} from "../../../hooks/insurance/useFinalExpensePageQuery";
 
 // Styles
 // Scripts
@@ -32,12 +32,14 @@ const PhoneIcon = () => (
 );
 
 
-import HeroTmp from "../../../static/images/final-insurance-hero-mobile.png"
+import HeroTmp from "../../../static/images/final-expense-hero-mobile.png"
+import {Tracing} from "../../../components/Tracing/Tracing";
 
 const MedicarePrescriptionDrugPage = () => {
-    const {page} = useMedicarePrescriptionDrugPageQuery();
+    const {page} = useFinalExpensePageQuery();
     return (
         <Layout>
+            <Tracing/>
             <PageContainer>
                 <HeroContainer>
                     {/*<HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>*/}
@@ -70,24 +72,24 @@ const MedicarePrescriptionDrugPage = () => {
                         <SectionColumnLeft>
                             <SectionTitle>
                                 Final expense insurance
-                                {/*{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.heading}*/}
+                                {/*{page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.heading}*/}
                             </SectionTitle>
                         </SectionColumnLeft>
                         <SectionColumnRight>
                             <SectionText>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.subheading}
+                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.subheading}
                             </SectionText>
                             <SectionSubtitle>
                                 A final expense life insurance policy:
-                                {/*{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listTitle}*/}
+                                {/*{page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.listTitle}*/}
                             </SectionSubtitle>
                             <ListContainer>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
+                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
                                     <ListItem key={`list-item-${i}`}>{item}</ListItem>
                                 ))}
                             </ListContainer>
-                            <CtaButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.link} onClick={routeLink}>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.text}
+                            <CtaButton href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.sectionCta?.link} onClick={routeLink}>
+                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.sectionCta?.text}
                             </CtaButton>
                         </SectionColumnRight>
                     </SectionColumns>
@@ -99,18 +101,18 @@ const MedicarePrescriptionDrugPage = () => {
                                     Still have questions?
                                     <br/>
                                     Contact us.
-                                    {/*{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.title}*/}
+                                    {/*{page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.title}*/}
                                 </CardTitle>
                             </SectionCardTop>
                             <SectionCardBottom>
                                 <CardText>
-                                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}
+                                    {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.subtitle}
                                 </CardText>
-                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop} only='desktop'>
-                                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonTextDesktop}
+                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.buttonUrlDesktop} only='desktop'>
+                                    {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.buttonTextDesktop}
                                 </CardButton>
-                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlMobile} only='mobile'>
-                                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonTextMobile}
+                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.buttonUrlMobile} only='mobile'>
+                                    {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.buttonTextMobile}
                                 </CardButton>
                             </SectionCardBottom>
                         </SectionCard>
@@ -118,55 +120,55 @@ const MedicarePrescriptionDrugPage = () => {
                 </SectionContainer>
                 <SectionContainerWhite>
                     <SectionTitleRelated>
-                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.sectionHeading}
+                        {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.sectionHeading}
                     </SectionTitleRelated>
                     <RelatedCards>
-                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.link}>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated1?.link}>
+                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated1?.image?.sourceUrl} alt=""/>
                             <RelatedTitle>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.title}
+                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated1?.title}
                             </RelatedTitle>
                             <RelatedTime>
                                 6-MINUTE READ
                             </RelatedTime>
-                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.content}}/>
+                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated1?.content}}/>
                         </RelatedCard>
-                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.link}>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.image.sourceUrl} alt=""/>
+                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated2?.link}>
+                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated2?.image?.sourceUrl} alt=""/>
                             <RelatedTitle>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.title}
+                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated2?.title}
                             </RelatedTitle>
                             <RelatedTime>
                                 6-MINUTE READ
                             </RelatedTime>
-                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.content}}/>
+                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated2?.content}}/>
                         </RelatedCard>
-                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.link}>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.image.sourceUrl} alt=""/>
+                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated3?.link}>
+                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated3?.image?.sourceUrl} alt=""/>
                             <RelatedTitle>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.title}
+                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated3?.title}
                             </RelatedTitle>
                             <RelatedTime>
                                 6-MINUTE READ
                             </RelatedTime>
-                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.content}}/>
+                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated3?.content}}/>
                         </RelatedCard>
                     </RelatedCards>
-                    <CtaButtonSecondary href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaLink}>
-                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaText}
+                    <CtaButtonSecondary href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.ctaLink}>
+                        {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.ctaText}
                     </CtaButtonSecondary>
                 </SectionContainerWhite>
                 <TheUl>
                     <TheLi>
                         <CardTitleQuestions>
-                            {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.title}
+                            {page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.title}
                         </CardTitleQuestions>
                         <CardButtonsContainer>
-                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Url}>
-                                {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Text}, TTY 771
+                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.button1Url}>
+                                {page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.button1Text}, TTY 771
                             </CardButtonBig>
-                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button2Url}>
-                                {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button2Text}
+                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.button2Url}>
+                                {page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.button2Text}
                             </CardButtonBig>
                         </CardButtonsContainer>
                     </TheLi>
@@ -833,7 +835,7 @@ const HeroDesktopOpacity = styled.span`
 export default MedicarePrescriptionDrugPage;
 
 export const Head = () => {
-    const {page} = useMedicarePrescriptionDrugPageQuery();
+    const {page} = useFinalExpensePageQuery();
     return (
         <>
             <PageHead
@@ -841,4 +843,4 @@ export const Head = () => {
                 description={page.seo.metaDesc}/>
         </>
     )
-}
+};

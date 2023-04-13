@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, {useEffect, useRef, useState} from 'react';
-import medicarePrescriptionDrugDesktop from './medicare-advantage-desktop.png';
-import medicarePrescriptionDrugMobile from './medicare-advantage-mobile.png';
+import medicarePrescriptionDrugDesktop from './final-expense-desktop.png';
+import medicarePrescriptionDrugMobile from './final-expense-mobile.png';
 import {BREAKPOINT_MD} from "../../breakpoints";
 
 const JUMP = 0;
