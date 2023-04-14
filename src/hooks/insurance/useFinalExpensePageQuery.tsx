@@ -4,6 +4,15 @@ export const useFinalExpensePageQuery = () => {
     const data = useStaticQuery(graphql`
 query FinalExpensePageQuery {
   page: wpPage(databaseId: {eq: 7517}) {
+    finalExpensePageCustomFields {
+      section1 {
+        title
+        listItems
+        text
+        subtitle
+      }
+      fieldGroupName
+    }
     pageHeroFields {
       heroImage {
         sourceUrl

@@ -15,6 +15,9 @@ import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
 import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import PageHead from "../../../components/PageHead";
+import HeroTmp from "../../../static/images/final-expense-hero-desktop.png"
+import {Tracing} from "../../../components/Tracing/Tracing";
+import checkImgSvg from "../../../static/images/list-check.svg";
 
 const PhoneIcon = () => (
     <StyledSvg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,10 +33,6 @@ const PhoneIcon = () => (
     </StyledSvg>
 );
 
-
-import HeroTmp from "../../../static/images/final-expense-hero-desktop.png"
-import {Tracing} from "../../../components/Tracing/Tracing";
-import checkImgSvg from "../../../static/images/list-check.svg";
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useFinalExpensePageQuery();
@@ -70,20 +69,16 @@ const MedicarePrescriptionDrugPage = () => {
                     <SectionColumns>
                         <SectionColumnLeft>
                             <SectionTitle>
-                                Final expense insurance
-                                {/*{page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.heading}*/}
+                                {page.finalExpensePageCustomFields?.section1?.title}
                             </SectionTitle>
                         </SectionColumnLeft>
                         <SectionColumnRight>
-                            <SectionText>
-                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.subheading}
-                            </SectionText>
+                            <SectionText dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.section1?.text}}/>
                             <SectionSubtitle>
-                                A final expense life insurance policy:
-                                {/*{page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.listTitle}*/}
+                                {page.finalExpensePageCustomFields?.section1?.subtitle}
                             </SectionSubtitle>
                             <ListContainer>
-                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
+                                {page.finalExpensePageCustomFields?.section1?.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
                                     <ListItem key={`list-item-${i}`}>{item}</ListItem>
                                 ))}
                             </ListContainer>
@@ -868,15 +863,22 @@ export const SectionTitle = styled.h2`
 `;
 
 export const SectionText = styled.div`
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 120%;
+    &, p, a {
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        text-decoration: none;
+    }
+    
+    p {
+        margin: 0;
+    }
 
     color: #4D4D4D;
-    padding: 0 36px;
-    margin-top: 40px;
+    padding: 0 32px;
+    margin-top: 26px;
 
     @media only screen and (min-width: ${BREAKPOINT_MD}px) {
         font-weight: 600;
@@ -908,7 +910,7 @@ export const SectionSubtitle = styled.h2`
     color: #009FDA;
 
     padding: 0 30px;
-    margin-top: 40px;
+    margin-top: 25px;
 
     @media only screen and (min-width: ${BREAKPOINT_MD}px) {
         font-family: 'IvyPresto Display-SemiBold', serif;
@@ -945,7 +947,7 @@ export const SectionColumnLeft = styled.div`
 export const ListContainer = styled.ul`
   padding: 0px 30px;
   list-style: none;
-  margin: 22px 0 40px;
+  margin: 22px 0 25px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin-top: 46px;
