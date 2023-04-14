@@ -63,7 +63,6 @@ const MedicarePrescriptionDrugPage = () => {
                             </CallUsText>
                             {/*<CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>*/}
                         </CallUsCtn>
-                        <DisclaimerText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>
                     </HeroPadding>
                     <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
                 </HeroContainer>
@@ -673,41 +672,6 @@ const CallUsText = styled.div`
   }
 `;
 
-const DisclaimerText = styled.div`
-  margin-top: 12px;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 110%;
-
-  text-align: center;
-
-  &, p, a {
-    text-decoration: none;
-    color: #4D4D4D;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    &, p, a {
-      color: #FFFFFF;
-    }
-  }
-
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 140%;
-    text-align: left;
-    margin-top: 33px;
-    max-width: 760px;
-  }
-`;
-
 const MainTitle = styled.h1`
   padding: 0;
 
@@ -779,7 +743,7 @@ const PageHeroFormStyled = styled(PageHeroForm)`
 
 const HeroMobileImg = styled.img`
   background: #E3DEDA;
-  margin: -112px auto 0;
+  margin: -100px auto 0;
   width: 100%;
   object-fit: cover;
   height: 441px;
@@ -892,8 +856,8 @@ export const SectionTitle = styled.h2`
     color: #FFFFFF;
     background: #009FDA;
 
-    padding: 18px 26px 14px;
-    width: 70%;
+    padding: 11px 32px 20px;
+    width: 90%;
 
     @media only screen and (min-width: ${BREAKPOINT_MD}px) {
         width: unset;
