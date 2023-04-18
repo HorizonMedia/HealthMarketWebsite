@@ -82,8 +82,8 @@ const MedicarePrescriptionDrugPage = () => {
                                     <ListItem key={`list-item-${i}`}>{item}</ListItem>
                                 ))}
                             </ListContainer>
-                            <CtaButton href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.sectionCta?.link} onClick={routeLink}>
-                                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection1?.sectionCta?.text}
+                            <CtaButton href={page.finalExpensePageCustomFields?.section1?.cta?.link} onClick={routeLink}>
+                                {page.finalExpensePageCustomFields?.section1?.cta?.text}
                             </CtaButton>
                         </SectionColumnRight>
                     </SectionColumns>
@@ -596,7 +596,7 @@ const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 42px;
+  padding: 0 12px 0 12px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     margin-top: 64px;

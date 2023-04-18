@@ -10,6 +10,10 @@ query FinalExpensePageQuery {
         listItems
         text
         subtitle
+        cta {
+          link
+          text
+        }
       }
       fieldGroupName
     }
