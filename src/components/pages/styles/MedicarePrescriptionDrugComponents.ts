@@ -85,7 +85,7 @@ export const SectionSubtitle = styled.h2`
   font-size: 20px;
   line-height: 130%;
 
-  color: #009FDA;
+  color: var(--color-primary-dark);
 
   padding: 0 30px;
   margin-top: 40px;
@@ -108,7 +108,7 @@ export const ListContainer = styled.ul`
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin-top: 46px;
     max-width: 710px;
-    margin-bottom: 30px;
+    margin-bottom: 43px;
   }
 `;
 
@@ -202,5 +202,6 @@ export const CtaButton = styled.a`
     font-size: 24px;
     line-height: 33px;
     background: #009B3A;
+    margin-left: 31px;
   }
 `;

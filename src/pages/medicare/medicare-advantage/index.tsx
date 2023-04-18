@@ -313,7 +313,7 @@ export const SectionText = styled.div`
   }
 
   a {
-    color: #009FDA;
+    color: var(--color-primary-dark);
   }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -329,7 +329,7 @@ export const SectionText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    padding: 3px 60px 3px 35px;
+    padding: 3px 60px 3px 98px;
   }
 
   @media only screen and (min-width: ${BREAKPOINT_XL}px) {
@@ -414,6 +414,7 @@ const HeroPadding = styled.div`
   padding: 0 22px;
   z-index: 100;
   position: relative;
+  width: 100%;
 `;
 
 const MainTitle = styled.h1`
@@ -484,7 +485,7 @@ const Subtitle = styled.h2`
 const PageHeroFormStyled = styled(PageHeroForm)`
   form {
     text-align: center;
-    @media only screen and (min-width: ${1025}px) {
+    @media only screen and (min-width: ${1200}px) {
       // Exactly at this width the form starts being aligned to the left.
       text-align: left;
     }
@@ -495,16 +496,20 @@ const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 38px 0 45px;
+  padding: 0 8px 0 16px;
 
-  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+  @media only screen and (min-width: ${1024}px) {
     justify-content: flex-start;
-    margin-top: 70px;
-    padding: 0 0;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    justify-content: flex-start;
+  @media only screen and (min-width: ${1200}px) {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -555,7 +560,7 @@ const CallUsText = styled.div`
 `;
 
 const DisclaimerText = styled.div`
-  margin-top: 14px;
+  margin-top: 10px;
   text-align: center;
 
   &, p, a {
@@ -571,12 +576,25 @@ const DisclaimerText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    text-align: left;
     &, p, a {
       color: #FFFFFF;
       line-height: 140%;
       font-size: 14px;
     }
+  }
+
+  @media only screen and (min-width: ${1024}px) {
+    text-align: left;
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+
+  @media only screen and (min-width: ${1200}px) {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {

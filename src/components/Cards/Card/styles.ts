@@ -210,7 +210,7 @@ export const Content = styled.div`
   padding: 3.2rem 3.2rem 6rem;
 
   h4 {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     font-family: var(--font-heading);
     padding: 0rem 0rem 2.4rem;
   }

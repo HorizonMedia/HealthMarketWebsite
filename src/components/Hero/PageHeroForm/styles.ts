@@ -14,6 +14,7 @@ export const Buttons = styled.div`
   align-items: stretch;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
 
   .centered & {
     justify-content: center;
@@ -23,8 +24,8 @@ export const Buttons = styled.div`
     min-width: 410px;
   }
 
-  @media only screen and (max-width: 1024px) {
-    justify-content: center;
+  @media only screen and (min-width: 1200px) {
+    justify-content: left;
   }
 
   @media only screen and (max-width: 920px) {

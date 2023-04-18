@@ -19,6 +19,7 @@ query MedicarePrescriptionDrugPageQuery {
       }
       medicarePrescriptionDrugSection2 {
         title
+        titleMobile
         subtitle
         buttonTextDesktop
         buttonUrlDesktop
