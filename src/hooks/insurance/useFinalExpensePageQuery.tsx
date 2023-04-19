@@ -21,6 +21,13 @@ query FinalExpensePageQuery {
         accordionText
         readMoreLink
       }
+      stillHaveQuestions {
+        title
+        button1Text
+        button1Url
+        button2Text
+        button2Url
+      }
     }
     pageHeroFields {
       heroImage {

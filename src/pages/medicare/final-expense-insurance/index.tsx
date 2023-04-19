@@ -104,12 +104,12 @@ const MedicarePrescriptionDrugPage = () => {
           {/*Mobile Calculator*/}
           <CardPaddingMobile>
             <SectionCardMobile>
-              <CardTitleMobile dangerouslySetInnerHTML={{__html: `Still have questions?<br/>Contact us.`}}/>
-              <CardButton href={'page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop'}>
-                Call 1-xxx-xxx-xxxx
+              <CardTitleMobile dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.stillHaveQuestions?.title}}/>
+              <CardButton href={page.finalExpensePageCustomFields?.stillHaveQuestions?.button1Url}>
+                {page.finalExpensePageCustomFields?.stillHaveQuestions?.button1Text}
               </CardButton>
-              <CardButton href={'page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop'}>
-                Find a licensed insurance agent
+              <CardButton style={{marginTop: '10px'}} href={page.finalExpensePageCustomFields?.stillHaveQuestions?.button2Url}>
+                {page.finalExpensePageCustomFields?.stillHaveQuestions?.button2Text}
               </CardButton>
             </SectionCardMobile>
           </CardPaddingMobile>
@@ -968,7 +968,7 @@ export const ListItem = styled.li`
 `;
 
 const CardPaddingMobile = styled.div`
-  padding: 40px 21px 0px;
+  padding: 37px 21px 0px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: none;
@@ -980,7 +980,7 @@ const SectionCardMobile = styled.div`
 
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  padding: 37px 12px 40px;
+  padding: 40px 12px 40px;
 `;
 
 const CalculatorLogo = styled.img`
@@ -1013,7 +1013,7 @@ const CardTitleMobile = styled.h2`
     margin: 0;
   }
 
-  margin-top: 16px;
+  margin-bottom: 22px;
 `;
 
 const CardButton = styled.a`
@@ -1026,7 +1026,7 @@ const CardButton = styled.a`
   text-align: center;
   color: #FFFFFF;
   display: flex;
-  padding: 8px;
+  padding: 11px;
   align-items: center;
   justify-content: center;
   background: #009B3A;
