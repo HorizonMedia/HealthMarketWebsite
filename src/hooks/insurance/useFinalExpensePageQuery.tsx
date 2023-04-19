@@ -15,7 +15,12 @@ query FinalExpensePageQuery {
           text
         }
       }
-      fieldGroupName
+      section2 {
+        title
+        accordionTitle
+        accordionText
+        readMoreLink
+      }
     }
     pageHeroFields {
       heroImage {
