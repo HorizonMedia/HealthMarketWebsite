@@ -947,7 +947,7 @@ export const SectionColumnLeft = styled.div`
 export const ListContainer = styled.ul`
   padding: 0px 30px;
   list-style: none;
-  margin: 22px 0 25px;
+  margin: 22px 0 33px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin-top: 46px;
@@ -963,7 +963,7 @@ export const ListItem = styled.li`
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  margin: 0 0 24px;
+  margin: 0 0 21px;
   padding-left: 44px;
   position: relative;
   color: #4D4D4D;
@@ -991,7 +991,7 @@ export const ListItem = styled.li`
     border-radius: 100%;
     position: absolute;
     left: 1px;
-    top: calc(50% - 13px);
+    top: 0;
     border: 2px solid var(--color-accent);
   }
 
@@ -1010,7 +1010,7 @@ export const ListItem = styled.li`
     position: absolute;
     left: 5px;
     background-repeat: no-repeat;
-    top: calc(50% - 14px);
+    top: 0;
     background-image: url("${checkImgSvg}");
   }
 `;
