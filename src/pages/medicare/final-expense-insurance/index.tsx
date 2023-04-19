@@ -117,17 +117,14 @@ const MedicarePrescriptionDrugPage = () => {
           <CardSpacingDesktop>
             <SectionCardDesktop>
               <SectionCardDesktopLeft>
-                {/*<CardTitleDesktop dangerouslySetInnerHTML={{__html: 'page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.title'}}/>*/}
-                <CardTextDesktop>
-                  Subtitle
-                  {/*{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}*/}
-                </CardTextDesktop>
+                <CardTitleDesktop dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.stillHaveQuestions?.title}}/>
               </SectionCardDesktopLeft>
               <SectionCardDesktopRight>
-                <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
-                <CardButton href={'page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop'}>
-                  Button text
-                  {/*{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonTextDesktop}*/}
+                <CardButton href={page.finalExpensePageCustomFields?.stillHaveQuestions?.button1Url}>
+                  {page.finalExpensePageCustomFields?.stillHaveQuestions?.button1Text}
+                </CardButton>
+                <CardButton style={{marginTop: '10px'}} href={page.finalExpensePageCustomFields?.stillHaveQuestions?.button2Url}>
+                  {page.finalExpensePageCustomFields?.stillHaveQuestions?.button2Text}
                 </CardButton>
               </SectionCardDesktopRight>
             </SectionCardDesktop>
@@ -983,18 +980,6 @@ const SectionCardMobile = styled.div`
   padding: 40px 12px 40px;
 `;
 
-const CalculatorLogo = styled.img`
-  margin: 0 auto;
-  width: 120px;
-  height: 80px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    width: 172px;
-    height: 114px;
-    margin: 0 auto;
-  }
-`;
-
 const CardTitleMobile = styled.h2`
   &, p {
     font-family: 'IvyPresto Display-SemiBold', serif;
@@ -1079,19 +1064,20 @@ const SectionCardDesktopLeft = styled.div`
   }
 `;
 
-const CardTextDesktop = styled.div`
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  color: #4D4D4D;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 150%;
-  margin: 15px 0 0;
-
-  // Only on XL
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
-    padding-right: 223px;
+const CardTitleDesktop = styled.h2`
+  &, p {
+    font-family: 'IvyPresto Display-SemiBold',serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-primary-dark);
+    font-size: 65px;
+    line-height: 110%;
+    text-align: left;
+    margin: 0;
   }
+
+  margin-top: 16px;
 `;
 
 const SectionCardDesktopRight = styled.div`
