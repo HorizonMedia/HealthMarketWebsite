@@ -87,6 +87,20 @@ const MedicarePrescriptionDrugPage = () => {
               </CtaButton>
             </SectionColumnRight>
           </SectionColumns>
+          <SectionColumns style={{marginTop: '78px'}}>
+            <SectionColumnLeft>
+              <SectionTitle>
+                {page.finalExpensePageCustomFields?.section2?.title}
+              </SectionTitle>
+            </SectionColumnLeft>
+            <SectionColumnRight>
+              <SectionAccordionTitle>
+                {page.finalExpensePageCustomFields?.section2?.accordionTitle}
+              </SectionAccordionTitle>
+              <SectionAccordionText dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.section2?.accordionText}}/>
+              <SectionAccordionStyled href={page.finalExpensePageCustomFields?.section2?.readMoreLink}>Read More</SectionAccordionStyled>
+            </SectionColumnRight>
+          </SectionColumns>
           <CardPadding>
             <SectionCard>
               <SectionCardTop>
@@ -920,6 +934,68 @@ export const SectionSubtitle = styled.h2`
     letter-spacing: 0.02em;
     margin-top: 101px;
   }
+`;
+
+export const SectionAccordionTitle = styled.h3`
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  color: #0065BD;
+  margin-top: 25px;
+  padding: 0 64px 0 32px;
+`;
+
+export const SectionAccordionText = styled.div`
+  &, p, a {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  color: #4D4D4D;
+  padding: 0 57px 0 32px;
+  margin-top: 10px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    font-weight: 600;
+    // Same size as list items
+    font-size: 24px;
+    line-height: 140%;
+    margin-top: 0px;
+    padding: 3px 35px 3px 35px;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    padding: 3px 60px 3px 35px;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    //Big size (originally 32px) until large screens
+    padding: 3px 22% 3px 35px;
+    font-size: 1.67vw;
+  }
+`;
+
+export const SectionAccordionStyled = styled.a`
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  margin-top: 4px;
+  display: inline-block;
+  padding-left: 32px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  color: #0065BD;
+  text-decoration: underline;
 `;
 
 export const SectionColumns = styled.div`
