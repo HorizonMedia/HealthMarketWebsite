@@ -101,30 +101,37 @@ const MedicarePrescriptionDrugPage = () => {
               <SectionAccordionStyled href={page.finalExpensePageCustomFields?.section2?.readMoreLink}>Read More</SectionAccordionStyled>
             </SectionColumnRight>
           </SectionColumns>
-          <CardPadding>
-            <SectionCard>
-              <SectionCardTop>
+          {/*Mobile Calculator*/}
+          <CardPaddingMobile>
+            <SectionCardMobile>
+              <CardTitleMobile dangerouslySetInnerHTML={{__html: `Still have questions?<br/>Contact us.`}}/>
+              <CardButton href={'page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop'}>
+                Call 1-xxx-xxx-xxxx
+              </CardButton>
+              <CardButton href={'page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop'}>
+                Find a licensed insurance agent
+              </CardButton>
+            </SectionCardMobile>
+          </CardPaddingMobile>
+          {/*Desktop Calculator*/}
+          <CardSpacingDesktop>
+            <SectionCardDesktop>
+              <SectionCardDesktopLeft>
+                {/*<CardTitleDesktop dangerouslySetInnerHTML={{__html: 'page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.title'}}/>*/}
+                <CardTextDesktop>
+                  Subtitle
+                  {/*{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}*/}
+                </CardTextDesktop>
+              </SectionCardDesktopLeft>
+              <SectionCardDesktopRight>
                 <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
-                <CardTitle>
-                  Still have questions?
-                  <br/>
-                  Contact us.
-                  {/*{page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.title}*/}
-                </CardTitle>
-              </SectionCardTop>
-              <SectionCardBottom>
-                <CardText>
-                  {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.subtitle}
-                </CardText>
-                <CardButton href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.buttonUrlDesktop} only='desktop'>
-                  {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.buttonTextDesktop}
+                <CardButton href={'page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop'}>
+                  Button text
+                  {/*{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonTextDesktop}*/}
                 </CardButton>
-                <CardButton href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.buttonUrlMobile} only='mobile'>
-                  {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugSection2?.buttonTextMobile}
-                </CardButton>
-              </SectionCardBottom>
-            </SectionCard>
-          </CardPadding>
+              </SectionCardDesktopRight>
+            </SectionCardDesktop>
+          </CardSpacingDesktop>
         </SectionContainer>
         <SectionContainerWhite>
           <SectionTitleRelated>
@@ -302,80 +309,6 @@ const RelatedText = styled.div`
   }
 `;
 
-const CardPadding = styled.div`
-  padding: 40px 21px 0px;
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    padding-top: 100px;
-  }
-`;
-
-const SectionCard = styled.div`
-  background: #FFFFFF;
-
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding: 37px 12px 40px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    max-width: 1432px;
-    padding: 51px 75px 60px 98px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`;
-
-const SectionCardTop = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-`;
-
-const SectionCardBottom = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-`;
-
-const CalculatorLogo = styled.img`
-  margin: 0 auto;
-  width: 120px;
-  height: 80px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    width: 172px;
-    height: 114px;
-    margin: 10px 95px 0 0;
-  }
-`;
-
-const CardTitle = styled.h2`
-  font-family: 'IvyPresto Display-SemiBold', serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 100%;
-
-  text-align: center;
-  letter-spacing: 0.02em;
-
-  color: #009FDA;
-  margin-top: 16px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    font-size: 65px;
-    line-height: 110%;
-    margin: 0;
-    max-width: 600px;
-    text-align: left;
-    padding-right: 30px;
-  }
-`;
-
 const CardTitleQuestions = styled.h2`
   font-family: 'IvyPresto Display-SemiBold', serif;
   font-style: normal;
@@ -395,31 +328,6 @@ const CardTitleQuestions = styled.h2`
     width: 50%;
     padding-right: 30px;
     padding-top: 15px;
-  }
-`;
-
-const CardText = styled.div`
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 120%;
-
-  display: flex;
-  align-items: center;
-
-  color: #4D4D4D;
-  margin-top: 21px;
-  margin-bottom: 15px;
-  padding: 0 8px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 150%;
-    margin: 0 0 0;
-    padding: 15px 30px 0 0;
-    max-width: 600px;
   }
 `;
 
@@ -537,38 +445,6 @@ const CardButtonsContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-`;
-
-const CardButton = styled.a`
-  border-radius: 4px;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  text-align: center;
-  color: #FFFFFF;
-  display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'mobile' ? 'flex' : 'none'};
-  padding: 8px;
-  align-items: center;
-  justify-content: center;
-  background: #009B3A;
-  border: 2px solid #FFFFFF;
-  margin: 0 auto;
-
-  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    max-width: unset;
-    width: fit-content;
-    padding: 15px 34px;
-  }
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'desktop' ? 'flex' : 'none'};
-    font-size: 24px;
-    line-height: 33px;
-    padding: 16px;
-    min-width: 360px;
   }
 `;
 
@@ -987,7 +863,7 @@ export const SectionAccordionText = styled.div`
 
 export const SectionAccordionStyled = styled.a`
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  margin-top: 4px;
+  margin-top: 6px;
   display: inline-block;
   padding-left: 32px;
   font-style: normal;
@@ -1089,4 +965,140 @@ export const ListItem = styled.li`
     top: 0;
     background-image: url("${checkImgSvg}");
   }
+`;
+
+const CardPaddingMobile = styled.div`
+  padding: 40px 21px 0px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: none;
+  }
+`;
+
+const SectionCardMobile = styled.div`
+  background: #FFFFFF;
+
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 37px 12px 40px;
+`;
+
+const CalculatorLogo = styled.img`
+  margin: 0 auto;
+  width: 120px;
+  height: 80px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    width: 172px;
+    height: 114px;
+    margin: 0 auto;
+  }
+`;
+
+const CardTitleMobile = styled.h2`
+  &, p {
+    font-family: 'IvyPresto Display-SemiBold', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: var(--color-primary-dark);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  margin-top: 16px;
+`;
+
+const CardButton = styled.a`
+  border-radius: 4px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  background: #009B3A;
+  border: 2px solid #FFFFFF;
+  margin: 0 auto;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: flex;
+    font-size: 24px;
+    line-height: 33px;
+    padding: 16px;
+    min-width: 360px;
+    margin-top: 28px;
+  }
+`;
+
+const CardSpacingDesktop = styled.div`
+  display: none;
+  margin-top: 100px;
+  padding: 0 55px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: block;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    padding: 0 144px;
+  }
+
+  // Only on XL
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    padding: 0 244px;
+  }
+`;
+
+const SectionCardDesktop = styled.div`
+  background: #FFFFFF;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+`;
+
+const SectionCardDesktopLeft = styled.div`
+  width: 64.5%;
+  padding: 55px 15px 55px 30px;
+
+  // Only on XL
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    padding: 55px 0 55px 98px;
+  }
+`;
+
+const CardTextDesktop = styled.div`
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #4D4D4D;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  margin: 15px 0 0;
+
+  // Only on XL
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    padding-right: 223px;
+  }
+`;
+
+const SectionCardDesktopRight = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 55px 30px 55px 15px;
 `;
