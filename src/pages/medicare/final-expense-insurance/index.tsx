@@ -101,7 +101,7 @@ const MedicarePrescriptionDrugPage = () => {
               <SectionAccordionStyled href={page.finalExpensePageCustomFields?.section2?.readMoreLink}>Read More</SectionAccordionStyled>
             </SectionColumnRight>
           </SectionColumns>
-          {/*Mobile Calculator*/}
+          {/*Mobile Still Have Questions*/}
           <CardPaddingMobile>
             <SectionCardMobile>
               <CardTitleMobile dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.stillHaveQuestions?.title}}/>
@@ -113,7 +113,7 @@ const MedicarePrescriptionDrugPage = () => {
               </CardButton>
             </SectionCardMobile>
           </CardPaddingMobile>
-          {/*Desktop Calculator*/}
+          {/*Desktop Still Have Questions*/}
           <CardSpacingDesktop>
             <SectionCardDesktop>
               <SectionCardDesktopLeft>
@@ -132,42 +132,42 @@ const MedicarePrescriptionDrugPage = () => {
         </SectionContainer>
         <SectionContainerWhite>
           <SectionTitleRelated>
-            {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.sectionHeading}
+            {page.finalExpensePageCustomFields?.relatedContentSection?.title}
           </SectionTitleRelated>
           <RelatedCards>
-            <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated1?.link}>
-              <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated1?.image?.sourceUrl} alt=""/>
+            <RelatedCard href={page.finalExpensePageCustomFields?.relatedContent1?.link}>
+              <RelatedImage src={page.finalExpensePageCustomFields?.relatedContent1?.image?.sourceUrl} alt=""/>
               <RelatedTitle>
-                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated1?.title}
+                {page.finalExpensePageCustomFields?.relatedContent1?.title}
               </RelatedTitle>
               <RelatedTime>
                 6-MINUTE READ
               </RelatedTime>
-              <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated1?.content}}/>
+              <RelatedText dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.relatedContent1?.content}}/>
             </RelatedCard>
-            <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated2?.link}>
-              <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated2?.image?.sourceUrl} alt=""/>
+            <RelatedCard href={page.finalExpensePageCustomFields?.relatedContent2?.link}>
+              <RelatedImage src={page.finalExpensePageCustomFields?.relatedContent2?.image?.sourceUrl} alt=""/>
               <RelatedTitle>
-                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated2?.title}
+                {page.finalExpensePageCustomFields?.relatedContent2?.title}
               </RelatedTitle>
               <RelatedTime>
                 6-MINUTE READ
               </RelatedTime>
-              <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated2?.content}}/>
+              <RelatedText dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.relatedContent2?.content}}/>
             </RelatedCard>
-            <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated3?.link}>
-              <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated3?.image?.sourceUrl} alt=""/>
+            <RelatedCard href={page.finalExpensePageCustomFields?.relatedContent3?.link}>
+              <RelatedImage src={page.finalExpensePageCustomFields?.relatedContent3?.image?.sourceUrl} alt=""/>
               <RelatedTitle>
-                {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated3?.title}
+                {page.finalExpensePageCustomFields?.relatedContent3?.title}
               </RelatedTitle>
               <RelatedTime>
                 6-MINUTE READ
               </RelatedTime>
-              <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.medicarePrescriptionDrugRelated3?.content}}/>
+              <RelatedText dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.relatedContent3?.content}}/>
             </RelatedCard>
           </RelatedCards>
-          <CtaButtonSecondary href={page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.ctaLink}>
-            {page.medicarePrescriptionDrugPageCustomFields?.medicarePrescriptionDrugRelated?.ctaText}
+          <CtaButtonSecondary href={page.finalExpensePageCustomFields?.relatedContentSection?.viewMoreLink}>
+            {page.finalExpensePageCustomFields?.relatedContentSection?.viewMoreText}
           </CtaButtonSecondary>
         </SectionContainerWhite>
         <TheUl>

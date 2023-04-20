@@ -28,6 +28,35 @@ query FinalExpensePageQuery {
         button2Text
         button2Url
       }
+      relatedContentSection {
+        title
+        viewMoreLink
+        viewMoreText
+      }
+      relatedContent1 {
+        title
+        content
+        image {
+          sourceUrl
+        }
+        link
+      }
+      relatedContent2 {
+        title
+        content
+        image {
+          sourceUrl
+        }
+        link
+      }
+      relatedContent3 {
+        title
+        content
+        image {
+          sourceUrl
+        }
+        link
+      }
     }
     pageHeroFields {
       heroImage {
