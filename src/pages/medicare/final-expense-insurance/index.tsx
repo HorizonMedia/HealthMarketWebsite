@@ -914,6 +914,7 @@ export const ListItem = styled.li`
   line-height: 150%;
   margin: 0 0 21px;
   padding-left: 44px;
+  padding-right: 14px;
   position: relative;
   color: #4D4D4D;
 
