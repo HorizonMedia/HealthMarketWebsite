@@ -11,7 +11,6 @@ import Layout from "../../../components/Layout";
 import Footer from "../../../components/Footer";
 import styled from "@emotion/styled";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
-import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
 import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import PageHead from "../../../components/PageHead";
@@ -172,15 +171,13 @@ const MedicarePrescriptionDrugPage = () => {
         </SectionContainerWhite>
         <TheUl>
           <TheLi>
-            <CardTitleQuestions>
-              {page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.title}
-            </CardTitleQuestions>
+            <CardTitleQuestions dangerouslySetInnerHTML={{__html: page.finalExpensePageCustomFields?.stillHaveQuestions?.title}}/>
             <CardButtonsContainer>
-              <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.button1Url}>
-                {page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.button1Text}, TTY 771
+              <CardButtonBig href={page.finalExpensePageCustomFields?.stillHaveQuestions?.button1Url}>
+                {page.finalExpensePageCustomFields?.stillHaveQuestions?.button1Text}, TTY 771
               </CardButtonBig>
-              <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.button2Url}>
-                {page.medicarePrescriptionDrugPageCustomFields?.stillHaveQuestions?.button2Text}
+              <CardButtonBig href={page.finalExpensePageCustomFields?.stillHaveQuestions?.button2Url}>
+                {page.finalExpensePageCustomFields?.stillHaveQuestions?.button2Text}
               </CardButtonBig>
             </CardButtonsContainer>
           </TheLi>
@@ -307,24 +304,30 @@ const RelatedText = styled.div`
 `;
 
 const CardTitleQuestions = styled.h2`
-  font-family: 'IvyPresto Display-SemiBold', serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 100%;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #009FDA;
+  &, p {
+    font-family: 'IvyPresto Display-SemiBold', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #009FDA;
+  }
+
   margin: 0 0 22px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    font-size: 65px;
-    line-height: 110%;
-    margin: 0;
+    &, p {
+      font-size: 65px;
+      line-height: 110%;
+    }
+
     text-align: left;
     width: 50%;
     padding-right: 30px;
     padding-top: 15px;
+    margin: 0;
   }
 `;
 
@@ -1067,7 +1070,7 @@ const SectionCardDesktopLeft = styled.div`
 
 const CardTitleDesktop = styled.h2`
   &, p {
-    font-family: 'IvyPresto Display-SemiBold',serif;
+    font-family: 'IvyPresto Display-SemiBold', serif;
     font-style: normal;
     font-weight: 600;
     letter-spacing: 0.02em;
