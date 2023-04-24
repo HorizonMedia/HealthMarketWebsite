@@ -260,7 +260,7 @@ const RelatedTitle = styled.h2`
   line-height: 150%;
   padding: 17px 17px 0 24px;
 
-  color: #009FDA;
+  color: var(--color-primary-dark);
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 32px;
@@ -312,7 +312,7 @@ const CardTitleQuestions = styled.h2`
     line-height: 100%;
     text-align: center;
     letter-spacing: 0.02em;
-    color: #009FDA;
+    color: var(--color-primary-dark);
   }
 
   margin: 0 0 22px;
@@ -364,7 +364,7 @@ const PageContainer = styled.div`
 
 const SectionContainer = styled.div`
   background: #f3fafd;
-  padding: 40px 0px 38px;
+  padding: 50px 0px 38px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     padding: 104px 0 100px;
@@ -373,7 +373,7 @@ const SectionContainer = styled.div`
 
 const SectionContainerWhite = styled.div`
   background: #ffffff;
-  padding: 40px 0px 38px;
+  padding: 50px 0px 38px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     padding: 104px 0 100px;
@@ -759,7 +759,12 @@ export const SectionText = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
+  }
+
+  a {
     text-decoration: none;
+    color: inherit;
+    font-weight: 600;
   }
 
   p {
@@ -797,7 +802,7 @@ export const SectionSubtitle = styled.h2`
   font-size: 20px;
   line-height: 130%;
 
-  color: #009FDA;
+  color: var(--color-primary-dark);
 
   padding: 0 30px;
   margin-top: 25px;
@@ -818,7 +823,7 @@ export const SectionAccordionTitle = styled.h3`
   font-weight: 600;
   font-size: 20px;
   line-height: 130%;
-  color: #0065BD;
+  color: var(--color-primary-dark);
   margin-top: 25px;
   padding: 0 64px 0 32px;
 `;
@@ -870,7 +875,7 @@ export const SectionAccordionStyled = styled.a`
   font-weight: 600;
   font-size: 16px;
   line-height: 120%;
-  color: #0065BD;
+  color: var(--color-primary-dark);
   text-decoration: underline;
 `;
 
