@@ -23,7 +23,7 @@ import Navigation from "../../Navigation"
 import SearchField from "../../SearchField"
 
 // Images
-import PhoneIcon from "../../../static/images/phone-icon.png"
+import PhoneIcon from "../../../static/images/phone-icon.svg"
 import SearchIcon from "../../../static/images/search-icon.png"
 
 const HeaderRight = ({ headerData }: { headerData: any }) => {
@@ -50,6 +50,10 @@ const HeaderRight = ({ headerData }: { headerData: any }) => {
         <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> Text Size <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
       </Item>
       <Item>
+        <a className="hide-at-desktop" href="tel:+18178134562">
+          <img className="mobile phone icon" src={PhoneIcon} alt="telephone icon" />
+          Call us
+        </a>
         <SearchButton className="hide-at-device" onClick={toggleSearch}>
           <img className="icon" src={SearchIcon} alt="magnifying glass icon" />
         </SearchButton>
