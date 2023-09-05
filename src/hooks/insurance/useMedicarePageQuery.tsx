@@ -32,6 +32,7 @@ export const useMedicarePageQuery = () => {
             }
           }
           callUs
+          heroDisclaimer
         }
         medicarePageCustomFields {
           medicareSection1 {

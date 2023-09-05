@@ -220,3 +220,13 @@ export const CTA = styled.div`
     }
   }
 `
+
+export const Disclaimer = styled.div`
+
+  p {
+    color: var(--color-light);
+    font-family: var(--font-body);
+    text-shadow: 0px 4px 4px #00000040;
+    margin-top: 12px;
+  }
+`

@@ -94,7 +94,7 @@ const MedicareAdvantagePage = () => {
             btnRightText={page?.pageHeroFields?.heroButtons?.heroButton2?.text}
             inputId="medicarePageHeroLocation"
             footerContent={page?.pageHeroFields?.callUs} />
-        <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvPostHeroDisclaimer }} />
+        {/* <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvPostHeroDisclaimer }} /> */}
       </Hero>
 
       {/* <HeroContainer>

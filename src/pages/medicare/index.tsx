@@ -49,7 +49,8 @@ const MedicarePage = () => {
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
             inputId="medicarePageHeroLocation"
-            footerContent={page.pageHeroFields.callUs} />
+            footerContent={page.pageHeroFields.callUs}
+            heroDisclaimer={page.pageHeroFields.heroDisclaimer} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
       </Hero>
       <Section

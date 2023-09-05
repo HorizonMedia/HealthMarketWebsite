@@ -28,10 +28,13 @@ import Callouts from '../components/Callouts';
 import Callout from '../components/Callouts/Callout';
 import Footer from '../components/Footer';
 
+
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
     const tiles = home.homePageCustomFields.homeSection1.tiles;
     const callouts = home.calloutsCustomField.callouts;
+
+    console.log(home.pageHeroFields.heroDisclaimer)
 
     return (
         <Layout pageClass="home" headerColor="light">
@@ -47,7 +50,8 @@ const IndexPage = ({path}: PageProps) => {
                     btnRightText={home.pageHeroFields.heroButtons.heroButton2.text}
                     inputId="homepageHeroLocation"
                     buttons
-                    hideFooter />
+                    hideFooter
+                    heroDisclaimer={home.pageHeroFields.heroDisclaimer} />
             </Hero>
             <Section
                 heading={home.homePageCustomFields.homeSection1.heading}

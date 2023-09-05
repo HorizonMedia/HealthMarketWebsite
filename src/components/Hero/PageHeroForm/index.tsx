@@ -9,6 +9,7 @@ import {
   Radio,
   Footer,
   CTA,
+  Disclaimer
   // InputGroup,
   // Input
 } from "./styles"
@@ -35,7 +36,8 @@ interface Props {
   inputId: string,
   buttons?: boolean,
   footerContent: string,
-  hideFooter?: boolean
+  hideFooter?: boolean,
+  heroDisclaimer?: string
 }
 
 // set geocode earth api key
@@ -45,7 +47,7 @@ const api_key = 'ge-8876b9780ea0871d';
 const plans = "https://shop.healthmarkets.com/en/about-me/info/";
 const agents = "/local-health-insurance-agent/search/";
 
-const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
+const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, heroDisclaimer, footerContent, hideFooter,...rest  }) => {
   console.log(hideFooter);
 
   return (
@@ -66,6 +68,7 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
           <input type="hidden" id="zipCode" value="" />
           <input type="hidden" id="county" value="" />
         </div>
+        <Disclaimer dangerouslySetInnerHTML={{ __html: heroDisclaimer }}  />
         <Footer>
           <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light">Search</Button>
           {(!hideFooter || hideFooter === undefined) ? (

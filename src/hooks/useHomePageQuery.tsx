@@ -31,6 +31,7 @@ export const useHomePageQuery = () => {
           }
           headline
           subheadline
+          heroDisclaimer
         }
         homePageCustomFields {
           homeSection1 {
