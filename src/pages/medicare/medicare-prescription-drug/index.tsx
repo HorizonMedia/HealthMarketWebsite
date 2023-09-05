@@ -46,6 +46,7 @@ const PhoneIcon = () => (
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
+
     return (
         <Layout>
             <PageContainer>
@@ -61,8 +62,9 @@ const MedicarePrescriptionDrugPage = () => {
                     btnLeftText={page?.pageHeroFields?.heroButtons?.heroButton1?.text}
                     btnRightText={page?.pageHeroFields?.heroButtons?.heroButton2?.text}
                     inputId="medicarePageHeroLocation"
-                    footerContent={page?.pageHeroFields?.callUs} />
-                <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }} />
+                    footerContent={page?.pageHeroFields?.callUs}
+                    heroDisclaimer={page?.pageHeroFields?.heroDisclaimer} />
+                {/* <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }} /> */}
               </Hero>
                 {/* <HeroContainer>
                     <HeroDesktopImg src={page.pageHeroFields.heroImage?.sourceUrl} alt="Hero"/>
