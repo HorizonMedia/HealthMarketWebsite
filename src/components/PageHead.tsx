@@ -59,7 +59,7 @@ const PageHead: FC<Props> = ({
         <meta property="twitter:description" content={metaDescription} />
 
         <script dangerouslySetInnerHTML={{ __html: analytics }}></script>
-        <script type="text/javascript" src="https://dev.cdn.uhonedigital.com/scripts/analytics-configuration.min.js"></script>
+        {process.env.NODE_ENV === 'development' && <script type="text/javascript" src="https://dev.cdn.uhonedigital.com/scripts/analytics-configuration.min.js"></script>}
       </>
     );
 }
