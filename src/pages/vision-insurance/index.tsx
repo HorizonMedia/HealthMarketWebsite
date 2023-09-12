@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Global } from "@emotion/react";
 
 // Query
-import { useDentalPageQuery } from "../../hooks/insurance/useDentalPageQuery"
+import { useVisionPageQuery } from "../../hooks/insurance/useVisionPageQuery"
 
 // Styles
 import {
@@ -32,8 +32,8 @@ import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
 
 const VisionInsurancePage = () => {
-  const { page } = useDentalPageQuery();
-  const callouts = page.calloutsCustomField.callouts;
+  const { page } = useVisionPageQuery();
+  // const callouts = page.calloutsCustomField.callouts;
 
   const [hasChildren, setHasChildren] = useState(false);
 
@@ -52,7 +52,7 @@ const VisionInsurancePage = () => {
   }, []);
 
   return (
-    <Layout pageClass="dental-insurance">
+    <Layout pageClass="vision-insurance">
       <Global styles={PageStyles} />
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
@@ -63,11 +63,11 @@ const VisionInsurancePage = () => {
         <PageHeroForm
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-            inputId="dentalPageHeroLocation"
+            inputId="visionPageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
       </Hero>
       <FlexedSection
-        color={page.dentalPageCustomFields.dentalSection1.color}
+        color={page.visionPageCustomFields.visionSection1.color}
         heading={page.dentalPageCustomFields.dentalSection1.heading}>
         <Accordion
           title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion1.heading}
@@ -144,7 +144,7 @@ const VisionInsurancePage = () => {
 export default VisionInsurancePage
 
 export const Head = () => {
-  const { page } = useDentalPageQuery();
+  const { page } = useVisionPageQuery();
   return (
     <>
       <PageHead
