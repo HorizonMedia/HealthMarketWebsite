@@ -33,7 +33,8 @@ import Footer from "../../components/Footer";
 
 const VisionInsurancePage = () => {
   const { page } = useVisionPageQuery();
-  // const callouts = page.calloutsCustomField.callouts;
+  debugger
+  const callouts = page.calloutsCustomField.callouts;
 
   const [hasChildren, setHasChildren] = useState(false);
 
@@ -57,7 +58,7 @@ const VisionInsurancePage = () => {
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
-        bgColor="#BBD9F1">
+        bgColor="#E5E7E6">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -68,68 +69,43 @@ const VisionInsurancePage = () => {
       </Hero>
       <FlexedSection
         color={page.visionPageCustomFields.visionSection1.color}
-        heading={page.dentalPageCustomFields.dentalSection1.heading}>
-        <Accordion
-          title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion1.heading}
-          content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion1.content} />
-        <Accordion
-          title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion2.heading}
-          content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion2.content} />
-        <Accordion
-          title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.heading}
-          content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.content} />
-        <a className="hide-at-mobile" href={page.dentalPageCustomFields.dentalSection1.cta.link} onClick={routeLink}>
-          <Button background="accent-alt" border="light" color="light">{page.dentalPageCustomFields.dentalSection1.cta.text}</Button>
-        </a>
+        heading={page.visionPageCustomFields.visionSection1.sectionHeading}>
       </FlexedSection>
-      <Section color="light">
-        <Callouts>
-            {(callouts) ? (
-                Object.keys(callouts).map((index) => {
-                    const callout = callouts[index];
-                    return (
-                        <Callout
-                            number={callout.number}
-                            tagline={callout.tagline}
-                            title={callout.title}
-                            description={callout.description}
-                            disclaimer={callout.disclaimer}
-                        />
-                    )
-                })
-            ) : null}
-        </Callouts>
+      <Section color={page.visionPageCustomFields.visionSection2.color}>
+      </Section>
+      <Section color={page.visionPageCustomFields.visionSection3.color}
+      heading={page.visionPageCustomFields.visionSection3.sectionHeading}>
       </Section>
       <Section
-        color={page.dentalPageCustomFields.dentalSection2.color}
-        heading={page.dentalPageCustomFields.dentalSection2.heading}>
+        color={page.visionPageCustomFields.visionSection4.color}
+        heading={page.visionPageCustomFields.visionSection4.sectionHeading}>
         <RelatedContent />
         {(!hasChildren) ? (
           <Cards relatedContent={true}>
             <Card
-              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
-              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}
-              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
+              image={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent1?.image.sourceUrl}
+              title={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent1?.heading}
+              link={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent1?.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.relatedContent1?.content}} />
             </Card>
             <Card
-              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
-              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.heading}
-              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
+              image={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent2?.image.sourceUrl}
+              title={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent2?.heading}
+              link={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent2?.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.relatedContent2?.content}} />
             </Card>
             <Card
-              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
-              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.heading}
-              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
+              image={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent3.image.sourceUrl}
+              title={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent3.heading}
+              link={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent3.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.relatedContent3.content}} />
             </Card>
           </Cards>
         ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
-          <a href={page.dentalPageCustomFields.dentalSection2.cta.link} onClick={routeLink}>
+          <a href={page.visionPageCustomFields.visionSection4.cta.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page.dentalPageCustomFields.dentalSection2.cta.text}
+              {page.visionPageCustomFields.visionSection4.cta.text}
             </Button>
           </a>
         </div>

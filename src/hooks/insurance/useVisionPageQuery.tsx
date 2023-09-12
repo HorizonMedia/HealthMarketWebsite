@@ -159,6 +159,35 @@ export const useVisionPageQuery = () => {
                         sourceUrl
                     }
                 }
+                disclaimers {
+                    disclaimer
+                }
+                calloutsCustomField {
+                    isActive
+                    callouts {
+                      callout1 {
+                        number
+                        tagline
+                        title
+                        description
+                        disclaimer
+                      }
+                      callout2 {
+                        number
+                        tagline
+                        title
+                        description
+                        disclaimer
+                      }
+                      callout3 {
+                        number
+                        tagline
+                        title
+                        description
+                        disclaimer
+                      }
+                    }
+                }
             }
         }
     `)
