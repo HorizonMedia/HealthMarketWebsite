@@ -63,6 +63,7 @@ const VisionInsurancePage = () => {
   return (
     <Layout pageClass="vision-insurance">
       <Global styles={PageStyles} />
+      
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}

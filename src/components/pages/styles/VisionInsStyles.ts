@@ -24,6 +24,22 @@ export const PageStyles = css`
     width: 100%;
   }
 
+  .hero > div.half {
+    justify-content: flex-start;
+  }
+
+  @media only screen and (min-width: 1921px) {
+    div.hero {
+      padding-bottom: 48rem;
+    }
+
+    .vision-insurance div.section {
+      padding-right: 9rem;
+      padding-left: 9rem;
+    }
+  }
+
+
   @media only screen and (max-width: 1024px) {
 
     div.hero {
@@ -51,10 +67,6 @@ export const PageStyles = css`
     .hero > img.show-at-mobile {
       display: block;
       object-position: bottom;
-    }
-
-    .hero > div.half {
-      justify-content: flex-start;
     }
   }
 
@@ -229,4 +241,8 @@ export const ResourceWrapper = styled.div`
       }
     }
   }
+`
+
+const PageContainer = styled.div`
+
 `
