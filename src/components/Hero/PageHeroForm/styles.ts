@@ -9,6 +9,23 @@ export const Wrapper = styled.div`
     // ...
   }
 `
+export const FirstWrapper = styled.div`
+.phone-link {
+  color: white;
+  text-decoration: none;
+}
+@media only screen and (max-width: 620px) {
+  margin-top: 200px;
+}
+`
+
+export const HideOnDesktopWrapper = styled.div`
+display: none;
+
+@media only screen and (max-width: 620px) {
+  display: block;
+}
+`
 
 export const Buttons = styled.div`
   align-items: stretch;
@@ -84,61 +101,6 @@ export const Form = styled.form`
   }
 `
 
-export const InputGroup = styled.div`
-  display: inline-block;
-  margin-top: 3.4rem;
-  position: relative;
-  text-align: center;
-
-  img {
-    height: 24px;
-    left: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-14px);
-    z-index: 1;
-  }
-
-  @media only screen and (max-width: 620px) {
-    margin-top: 1.6rem;
-    width: 100%;
-
-    img {
-      left: 14px;
-    }
-  }
-`
-
-export const Input = styled.input`
-  border-bottom: 7px solid var(--color-accent);
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  color: var(--color-dark);
-  display: block;
-  font-size: 2rem;
-  margin: 0 auto;
-  min-width: 82rem;
-  padding: 2.1rem 2.1rem 2.1rem 6.2rem;
-  position: relative;
-
-  &::placeholder {
-    color: var(--color-accent-alt);
-    opacity: 0.6;
-  }
-
-  @media only screen and (max-width: 788px) {
-    font-size: 1.6rem;
-    max-width: 100%;
-    min-width: 100%;
-    width: 68.8vw;
-  }
-
-  @media only screen and (max-width: 620px) {
-    padding: 1.6rem 5.6rem 1.8rem 4.2rem;
-  }
-`
-
 export const Footer = styled.div`
   margin-top: 3.2rem;
 
@@ -151,8 +113,24 @@ export const Footer = styled.div`
     max-width: 33.3rem;
     width: 100%;
 
+    .mobile-button {
+      display: none;
+    }
+
+    .desktop-button {
+      width: 300px;
+    }
+
     @media only screen and (max-width: 620px) {
       max-width: 100%;
+
+      .mobile-button {
+        display: block;
+      }
+
+      .desktop-button {
+        display: none;
+      }
     }
   }
 
@@ -167,6 +145,12 @@ export const CTA = styled.div`
   display: flex;
   flex-wrap: no-wrap;
   margin-top: 1.6rem;
+
+    @media only screen and (max-width: 620px) {
+        width: 85%;
+        margin-left: 3.6rem;
+        margin-top: 1rem;
+      }
 
   .home & { display: none; }
 
@@ -191,17 +175,29 @@ export const CTA = styled.div`
 
   @media only screen and (max-width: 620px) {
     span > p > a, span > p {
-      font-size: 18px;
+      font-size: 16px;
+        color: var(--color-dark);
+        text-align: left;
+        margin-top: 5px;
     }
   }
 
   .light & {
     img {
       filter: brightness(0) invert(1);
+      z-index: -999;
+       @media only screen and (max-width: 620px) {
+        filter: brightness(0);
+        margin-top: 14px;
+        margin-right: 13px;
+      }
     }
   
     a, span {
       color: var(--color-light);
+      @media only screen and (max-width: 620px) {
+        color: var(--color-dark);
+      }
     }
   }
 

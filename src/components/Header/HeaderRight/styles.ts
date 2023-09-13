@@ -29,7 +29,12 @@ export const Item = styled.div`
 
     &.phone {
       margin-right: 0.8rem;
+      filter: brightness(0) saturate(100%) invert(30%) sepia(7%) saturate(18%) hue-rotate(15deg) brightness(92%) contrast(90%);
     }
+  }
+
+  .hide-at-desktop{
+display:none;
   }
 
   @media only screen and (max-width: 788px) {
@@ -37,6 +42,23 @@ export const Item = styled.div`
 
     &:last-child {
       padding-right: 0;
+    }
+    .hide-at-desktop{
+      display: inline;
+      color: var(--color-primary-dark);
+      font-family: Open Sans;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-decoration: underline
+        }
+
+    .icon {
+      &.phone {
+        margin: -0.8rem 0.3rem 0 0;
+        filter: brightness(0) saturate(100%) invert(23%) sepia(99%) saturate(1789%) hue-rotate(191deg) brightness(95%) contrast(104%);
+      }
     }
   }
   

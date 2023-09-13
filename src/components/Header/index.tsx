@@ -45,6 +45,7 @@ const Header: FC<Props> = ({ headerData, staticHeader=false, color, lp=false }) 
 
 
   return (
+    <div className="header">
     <Wrapper className={`site-header ` + headerColor + ` ` + staticClass + ((lp) ? ` lp-header` : ``)}>
       <a href={process.env.GATSBY_SITE_BASE_URL} title="Go to Healthmarkets.com" onClick={routeLink}>
         <Logo className="site-logo" src={headerLogo} />
@@ -55,6 +56,7 @@ const Header: FC<Props> = ({ headerData, staticHeader=false, color, lp=false }) 
         <LPHeader headerData={headerData} />
       )}
     </Wrapper>
+    </div>
   )
 }
 
