@@ -15,7 +15,8 @@ import {
   ListHeading,
   ListWrapper,
   RelatedContentWrapper,
-  ResourceWrapper
+  ResourceWrapper,
+  PageContainer
 } from "../../components/pages/styles/VisionInsStyles";
 
 // Scripts
@@ -63,7 +64,7 @@ const VisionInsurancePage = () => {
   return (
     <Layout pageClass="vision-insurance">
       <Global styles={PageStyles} />
-      
+      <PageContainer className="vision-insurance">
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
@@ -174,6 +175,7 @@ const VisionInsurancePage = () => {
         <Footer>
             {page.disclaimers.disclaimer}
         </Footer>
+      </PageContainer>
     </Layout>
   )
 }

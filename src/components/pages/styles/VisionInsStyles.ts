@@ -28,19 +28,62 @@ export const PageStyles = css`
     justify-content: flex-start;
   }
 
+  .hero #zipCodeForm > div:first-of-type {
+    width: 100%;
+
+    &> div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .hero #zipCodeForm {
+    div.geocode {
+      width: 100%;
+
+      .input.group {
+        width: 100%;
+
+        input.geocode.input {
+          min-width: 0;
+          width: 100%;
+        }
+      }
+    }
+  } 
+
   @media only screen and (min-width: 1921px) {
     div.hero {
       padding-bottom: 48rem;
     }
 
     .vision-insurance div.section {
-      padding-right: 9rem;
-      padding-left: 9rem;
+      padding-right: 13.3rem;
+      padding-left: 13.3rem;
     }
   }
 
+  @media only screen and (min-width: 1025px) {
 
-  @media only screen and (max-width: 1024px) {
+    .hero div.half {
+      flex-basis: 72%;
+      width: 72%;
+    }
+
+    .hero #zipCodeForm, .hero h4 {
+      width: 70%;
+    }
+
+    .hero #zipCodeForm div:first-of-type {
+      div {
+        min-width: 0px;
+        width: 50%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1025px) {
 
     div.hero {
       padding-bottom: 28rem;
@@ -108,16 +151,31 @@ export const PageStyles = css`
 
   @media screen and (min-width: 1280px) {
     div.hero {
-      padding-left: 5.5rem;
-      padding-right: 5.5rem;
+      padding-left: 13.3rem;
+      padding-right: 13.3rem;
       padding-top: 5.5rem;
     }
   }
+
+  @media (min-width: 620px) and (max-width: 1025px) {
+    .hero #zipCodeForm > div:first-of-type div {
+      width: 50%;
+    }
+  }
+
 `
 
 export const HeroHeading = styled.h1`
   color: #009FDA !important;
   margin-bottom: 2.4rem;  
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 8rem !important;
+  }
+
+  @media only screen and (min-width: 1921px) {
+    font-size: 130px !important;
+  }
 `
 
 export const HeroSubheading = styled.h4`
@@ -243,6 +301,6 @@ export const ResourceWrapper = styled.div`
   }
 `
 
-const PageContainer = styled.div`
+export const PageContainer = styled.div`
 
 `
