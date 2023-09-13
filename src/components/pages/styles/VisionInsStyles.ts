@@ -35,6 +35,7 @@ export const PageStyles = css`
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 13px 20px;
     }
   }
 
@@ -58,13 +59,27 @@ export const PageStyles = css`
       padding-bottom: 48rem;
     }
 
+    .hero > img.hide-at-mobile {
+      scale: 1;
+    }
+
     .vision-insurance div.section {
       padding-right: 13.3rem;
       padding-left: 13.3rem;
     }
   }
 
+  @media (min-width: 1025px) and (max-width: 16400px) {
+    .hero > img.hide-at-mobile {
+      object-position: 80% top;
+    }
+  }
+
   @media only screen and (min-width: 1025px) {
+
+    .hero > img.hide-at-mobile {
+      scale: 1.02;
+    }
 
     .hero div.half {
       flex-basis: 72%;
@@ -89,7 +104,7 @@ export const PageStyles = css`
       padding-bottom: 28rem;
 
       @media only screen and (min-width: 620px) {
-        padding-bottom: 80rem;
+        padding-bottom: 72rem;
       }
     }
 
