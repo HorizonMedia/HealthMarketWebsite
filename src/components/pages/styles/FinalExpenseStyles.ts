@@ -12,15 +12,25 @@ export const PageStyles = css`
   min-width: 65rem;
 
   @media only screen and (max-width: 620px) {
-  min-width: 12.5rem;
+    min-width: 12.5rem;
   }
+}
+
+.section:first-of-type .heading {
+  align-items: flex-start;
+}
+
+.heading h4 > p {
+  color: var(--color-dark);
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .form-container button {
   min-width: 45rem;
 
   @media only screen and (max-width: 620px) {
-min-width: 20rem;
+    min-width: 20rem;
   }
 
 }
@@ -51,15 +61,8 @@ min-width: 20rem;
     font-weight: 400;
   }
 
-  .section:first-of-type .heading h4 > p {
-    font-size: 16px;
-    line-height: 20.8px;
-    color: var(--color-dark);
-  }
-
   .list-item h5 {
     color: var(--color-dark);
-    font-size: 16px;
   }
 
   .card-link > p:first-of-type {
@@ -110,8 +113,30 @@ min-width: 20rem;
       width: 100%;
     }
 
+    .hero + div .section {
+      background-color: var(--color-primary-light);
+    }
+
+    .section:first-of-type .heading { 
+      display: block;
+    }
+
+    .section:first-of-type .heading h4 > p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+    }
+
     .hero + .section {
       padding-top: 4rem;
+    }
+    
+    .section:first-of-type .heading > h2 {
+      font-size: 40px !important;
+    }
+
+    .section:first-of-type .heading > h4 {
+      margin-top: 2.125em;
     }
 
     .button-container button {
@@ -229,7 +254,6 @@ export const SectionOneInnerContent = styled.div`
 export const ListHeading = styled.h4`
   color: var(--color-primary);
   font-family: var(--font-heading);
-  font-size: 32px;
   letter-spacing: 0.02em;
   line-height: 110%;
   margin-bottom: 34px;
@@ -247,6 +271,17 @@ export const ListWrapper = styled.div`
 
   @media only screen and (max-width: 620px) {
    margin-top: 40px;
+  }
+
+  li.list-item > div > h5 {
+    font-size: 24px;
+  }
+
+  @media only screen and (max-width: 820px) {
+    li.list-item > div > h5 {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 `
 
