@@ -9,7 +9,13 @@ import { useVisionPageQuery } from "../../hooks/insurance/useVisionPageQuery"
 import {
   PageStyles,
   HeroHeading,
-  HeroSubheading
+  HeroSubheading,
+  SectionOneInner,
+  SectionOneInnerContent,
+  ListHeading,
+  ListWrapper,
+  RelatedContentWrapper,
+  ResourceWrapper
 } from "../../components/pages/styles/VisionInsStyles";
 
 // Scripts
@@ -25,6 +31,9 @@ import Section from "../../components/Sections";
 import RelatedContent from "../../components/RelatedContent";
 import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
+import ListItem from "../../components/Lists/ListItem";
+import List from '../../components/Lists';
+import Medial from "../../components/Medials";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
 import Callouts from "../../components/Callouts";
@@ -33,7 +42,6 @@ import Footer from "../../components/Footer";
 
 const VisionInsurancePage = () => {
   const { page } = useVisionPageQuery();
-  debugger
   const callouts = page.calloutsCustomField.callouts;
 
   const [hasChildren, setHasChildren] = useState(false);
@@ -67,40 +75,91 @@ const VisionInsurancePage = () => {
             inputId="visionPageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
       </Hero>
-      <FlexedSection
-        color={page.visionPageCustomFields.visionSection1.color}
-        heading={page.visionPageCustomFields.visionSection1.sectionHeading}>
-      </FlexedSection>
-      <Section color={page.visionPageCustomFields.visionSection2.color}>
-      </Section>
-      <Section color={page.visionPageCustomFields.visionSection3.color}
-      heading={page.visionPageCustomFields.visionSection3.sectionHeading}>
-      </Section>
+
       <Section
-        color={page.visionPageCustomFields.visionSection4.color}
+          color={page.visionPageCustomFields.visionSection1.sectionColor}
+          heading={page.visionPageCustomFields.visionSection1.sectionHeading}
+          subheading={page.visionPageCustomFields.visionSection1.sectionSubheading}
+          html={true}>
+        <SectionOneInner>
+          <SectionOneInnerContent>
+            <List>
+              <ListHeading>{page.visionPageCustomFields.visionSection1.section1List.listHeading}</ListHeading>
+              <ListWrapper>
+              <ListItem heading={page.visionPageCustomFields.visionSection1.section1List.listItem1?.text} />
+              <ListItem heading={page.visionPageCustomFields.visionSection1.section1List.listItem2?.text} />
+              <ListItem heading={page.visionPageCustomFields.visionSection1.section1List.listItem3?.text} />
+              </ListWrapper>
+            </List>
+          </SectionOneInnerContent>
+        </SectionOneInner>
+      </Section>
+
+      <Medial color={page.visionPageCustomFields.visionSection2.sectionColor}>
+        <div dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection2.visionCtaColumns.column2.col2Heading }} />
+        <div className="button-container">
+          <a href={page.visionPageCustomFields.visionSection2.visionCtaColumns.column3.col3Button.button1.link} onClick={routeLink}>
+            <Button background="accent-alt" border="light" color="light">
+              {page.visionPageCustomFields.visionSection2.visionCtaColumns.column3.col3Button.button1.text}
+            </Button>
+          </a>
+          <a href={page.visionPageCustomFields.visionSection2.visionCtaColumns.column3.col3Button.button2.link} onClick={routeLink}>
+            <Button background="accent-alt" border="light" color="light">
+              {page.visionPageCustomFields.visionSection2.visionCtaColumns.column3.col3Button.button2.text}
+            </Button>
+          </a>
+        </div>
+      </Medial>
+
+      <Section
+        color={page.visionPageCustomFields.visionSection3.sectionColor}
+        heading={page.visionPageCustomFields.visionSection3.sectionHeading}>
+        <RelatedContent />
+          <ResourceWrapper>
+          <Cards relatedContent={true}>
+            <Card
+              image={page.visionPageCustomFields.visionSection3.resources.resource1.image.sourceUrl}
+              title={page.visionPageCustomFields.visionSection3.resources.resource1.heading}
+              link={page.visionPageCustomFields.visionSection3.resources.resource1.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection3.resources.resource1.content}} />
+            </Card>
+            <Card
+              image={page.visionPageCustomFields.visionSection3.resources.resource2.image.sourceUrl}
+              title={page.visionPageCustomFields.visionSection3.resources.resource2.heading}
+              link={page.visionPageCustomFields.visionSection3.resources.resource2.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection3.resources.resource2.content}} />
+            </Card>
+          </Cards>
+          </ResourceWrapper>
+      </Section>
+
+      <Section
+        color={page.visionPageCustomFields.visionSection4.sectionColor}
         heading={page.visionPageCustomFields.visionSection4.sectionHeading}>
         <RelatedContent />
         {(!hasChildren) ? (
+          <RelatedContentWrapper>
           <Cards relatedContent={true}>
             <Card
-              image={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent1?.image.sourceUrl}
-              title={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent1?.heading}
-              link={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent1?.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.relatedContent1?.content}} />
+              image={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent1.image.sourceUrl}
+              title={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent1.heading}
+              link={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent1.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent1.content}} />
             </Card>
             <Card
-              image={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent2?.image.sourceUrl}
-              title={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent2?.heading}
-              link={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent2?.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.relatedContent2?.content}} />
+              image={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent2.image.sourceUrl}
+              title={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent2.heading}
+              link={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent2.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent2.content}} />
             </Card>
             <Card
-              image={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent3.image.sourceUrl}
-              title={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent3.heading}
-              link={page.visionPageCustomFields.visionSection4.relatedContent.relatedContent3.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.relatedContent3.content}} />
+              image={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent3.image.sourceUrl}
+              title={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent3.heading}
+              link={page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent3.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection4.relatedContent.visionRelatedContent3.content}} />
             </Card>
           </Cards>
+          </RelatedContentWrapper>
         ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.visionPageCustomFields.visionSection4.cta.link} onClick={routeLink}>
@@ -110,6 +169,7 @@ const VisionInsurancePage = () => {
           </a>
         </div>
       </Section>
+
         <Footer>
             {page.disclaimers.disclaimer}
         </Footer>

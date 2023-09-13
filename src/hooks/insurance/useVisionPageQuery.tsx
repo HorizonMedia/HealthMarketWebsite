@@ -4,12 +4,19 @@ export const useVisionPageQuery = () => {
     const data = useStaticQuery(graphql`
         query VisionQuery {
             page: wpPage(databaseId: {eq: 10223}) {
+                id
+                slug
+                seo {
+                fullHead
+                title
+                metaDesc
+                }
                 visionPageCustomFields {
                     visionSection2 {
                         sectionColor
                         visionCtaColumns {
                             column1 {
-                            button {
+                            col1Button {
                                 button1 {
                                 link
                                 text
@@ -20,13 +27,13 @@ export const useVisionPageQuery = () => {
                                 }
                                 buttonStyle
                             }
-                            contentType
-                            image {
+                            col1Heading
+                            col1Image {
                                 sourceUrl
                             }
                             }
                             column2 {
-                            button {
+                            col2Button {
                                 button1 {
                                 link
                                 text
@@ -37,13 +44,13 @@ export const useVisionPageQuery = () => {
                                 }
                                 buttonStyle
                             }
-                            contentType
-                            image {
+                            col2Heading
+                            col2Image {
                                 sourceUrl
                             }
                             }
                             column3 {
-                            button {
+                            col3Button {
                                 button1 {
                                 link
                                 text
@@ -54,7 +61,8 @@ export const useVisionPageQuery = () => {
                                 }
                                 buttonStyle
                             }
-                            image {
+                            col3Heading
+                            col3Image {
                                 sourceUrl
                             }
                             }
@@ -89,7 +97,7 @@ export const useVisionPageQuery = () => {
                             text
                         }
                         relatedContent {
-                            relatedContent1 {
+                            visionRelatedContent1 {
                             content
                             heading
                             link
@@ -97,7 +105,7 @@ export const useVisionPageQuery = () => {
                                 sourceUrl
                             }
                             }
-                            relatedContent2 {
+                            visionRelatedContent2 {
                             content
                             heading
                             link
@@ -105,7 +113,7 @@ export const useVisionPageQuery = () => {
                                 sourceUrl
                             }
                             }
-                            relatedContent3 {
+                            visionRelatedContent3 {
                             content
                             heading
                             link
@@ -121,16 +129,16 @@ export const useVisionPageQuery = () => {
                     sectionColor
                     sectionHeading
                     sectionSubheading
-                    list {
+                    section1List {
                         listHeading
                         listItem1 {
-                        text
+                            text
                         }
                         listItem2 {
-                        text
+                            text
                         }
                         listItem3 {
-                        text
+                            text
                         }
                     }
                     }
