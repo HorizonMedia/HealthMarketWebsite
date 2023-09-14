@@ -7,9 +7,9 @@ export const useVisionPageQuery = () => {
                 id
                 slug
                 seo {
-                fullHead
-                title
-                metaDesc
+                    fullHead
+                    title
+                    metaDesc
                 }
                 visionPageCustomFields {
                     visionSection2 {
