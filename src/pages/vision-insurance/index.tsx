@@ -98,16 +98,16 @@ const VisionInsurancePage = () => {
       </Section>
 
       <Medial color={page.visionPageCustomFields.visionSection2.sectionColor}>
-        <div dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection2.visionCtaColumns.column2.col2Heading }} />
+        <div dangerouslySetInnerHTML={{ __html: page.visionPageCustomFields.visionSection2.visionCtaColumns.column1.col1Heading }} />
         <div className="button-container">
-          <a href={page.visionPageCustomFields.visionSection2.visionCtaColumns.column3.col3Button.button1.link} onClick={routeLink}>
+          <a href={page.visionPageCustomFields.visionSection2.visionCtaColumns.column2.col2Button.button1.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page.visionPageCustomFields.visionSection2.visionCtaColumns.column3.col3Button.button1.text}
+              {page.visionPageCustomFields.visionSection2.visionCtaColumns.column2.col2Button.button1.text}
             </Button>
           </a>
-          <a href={page.visionPageCustomFields.visionSection2.visionCtaColumns.column3.col3Button.button2.link} onClick={routeLink}>
+          <a href={page.visionPageCustomFields.visionSection2.visionCtaColumns.column2.col2Button.button2.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page.visionPageCustomFields.visionSection2.visionCtaColumns.column3.col3Button.button2.text}
+              {page.visionPageCustomFields.visionSection2.visionCtaColumns.column2.col2Button.button2.text}
             </Button>
           </a>
         </div>

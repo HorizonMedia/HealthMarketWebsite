@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 export const useVisionPageQuery = () => {
     const data = useStaticQuery(graphql`
         query VisionQuery {
-            page: wpPage(databaseId: {eq: 10223}) {
+            page: wpPage(databaseId: {eq: 9621}) {
                 id
                 slug
                 seo {
