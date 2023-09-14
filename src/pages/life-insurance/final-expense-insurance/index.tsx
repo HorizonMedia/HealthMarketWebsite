@@ -60,34 +60,34 @@ const FinalExpensePage = () => {
     <Layout pageClass="final-expense">
       <Global styles={PageStyles} />
       <Hero
-        image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        image={page?.pageHeroFields.heroImage.sourceUrl}
+        mobileImage={page?.pageHeroFields.mobileHeroImage.sourceUrl}
         bgColor="#F4F3F1">
-        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
-        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
+        <HeroHeading>{page?.pageHeroFields.headline}</HeroHeading>
+        <HeroSubheading>{page?.pageHeroFields.subheadline}</HeroSubheading>
         <div className="form-container">
         <PageHeroForm
             light
-            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            btnLeftText={page?.pageHeroFields.heroButtons.heroButton1.text}
+            btnRightText={page?.pageHeroFields.heroButtons.heroButton2.text}
             inputId="finalExpensePageHeroLocation"
-            footerContent={page.pageHeroFields.callUs} />
+            footerContent={page?.pageHeroFields.callUs} />
             </div>
       </Hero>
 
       <Section
-        color={page.finalExpensePageCustomFields.finalExpenseSection1.color}
-        heading={page.finalExpensePageCustomFields.finalExpenseSection1.heading}
-        subheading={page.finalExpensePageCustomFields.finalExpenseSection1.subheading}
+        color={page?.finalExpensePageCustomFields.finalExpenseSection1.color}
+        heading={page?.finalExpensePageCustomFields.finalExpenseSection1.heading}
+        subheading={page?.finalExpensePageCustomFields.finalExpenseSection1.subheading}
         html={true}>
         <SectionOneInner>
           <SectionOneInnerContent>
             <List>
-              <ListHeading>{page.finalExpensePageCustomFields.finalExpenseSection1.list.listHeading}</ListHeading>
-              <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem1.text} />
-              <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem2.text} />
-              <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem3.text} />
-              <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem4.text} />
+              <ListHeading>{page?.finalExpensePageCustomFields.finalExpenseSection1.list.listHeading}</ListHeading>
+              <ListItem heading={page?.finalExpensePageCustomFields.finalExpenseSection1.list.listItem1.text} />
+              <ListItem heading={page?.finalExpensePageCustomFields.finalExpenseSection1.list.listItem2.text} />
+              <ListItem heading={page?.finalExpensePageCustomFields.finalExpenseSection1.list.listItem3.text} />
+              <ListItem heading={page?.finalExpensePageCustomFields.finalExpenseSection1.list.listItem4.text} />
             </List>
             <div className="full-rounded" style={{ marginTop: "37px" }}>
               <a href={page?.finalExpensePageCustomFields?.finalExpenseSection1?.button?.link} onClick={routeLink}>
@@ -101,25 +101,25 @@ const FinalExpensePage = () => {
       </Section>
       
       <FlexedSection
-        color={page.finalExpensePageCustomFields.finalExpenseSection2.color}
-        heading={page.finalExpensePageCustomFields.finalExpenseSection2.heading}>
+        color={page?.finalExpensePageCustomFields.finalExpenseSection2.color}
+        heading={page?.finalExpensePageCustomFields.finalExpenseSection2.heading}>
         <Accordion
-          title={page.finalExpensePageCustomFields.finalExpenseSection2.accordions.accordion1.title}
-          content={page.finalExpensePageCustomFields.finalExpenseSection2.accordions.accordion1.content}
+          title={page?.finalExpensePageCustomFields.finalExpenseSection2.accordions.accordion1.title}
+          content={page?.finalExpensePageCustomFields.finalExpenseSection2.accordions.accordion1.content}
           html />
       </FlexedSection>
 
-      <Medial color={page.finalExpensePageCustomFields.finalExpenseSection3.color}>
-        <div dangerouslySetInnerHTML={{ __html: page.finalExpensePageCustomFields.finalExpenseSection3.columns.column1.heading }} />
+      <Medial color={page?.finalExpensePageCustomFields.finalExpenseSection3.color}>
+        <div dangerouslySetInnerHTML={{ __html: page?.finalExpensePageCustomFields.finalExpenseSection3.columns.column1.heading }} />
         <div className="button-container">
-          <a href={page.finalExpensePageCustomFields.finalExpenseSection3.columns.column2.button.button1.link} onClick={routeLink}>
+          <a href={page?.finalExpensePageCustomFields.finalExpenseSection3.columns.column2.button.button1.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page.finalExpensePageCustomFields.finalExpenseSection3.columns.column2.button.button1.text}
+              {page?.finalExpensePageCustomFields.finalExpenseSection3.columns.column2.button.button1.text}
             </Button>
           </a>
-          <a href={page.finalExpensePageCustomFields.finalExpenseSection3.columns.column2.button.button2.link} onClick={routeLink}>
+          <a href={page?.finalExpensePageCustomFields.finalExpenseSection3.columns.column2.button.button2.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page.finalExpensePageCustomFields.finalExpenseSection3.columns.column2.button.button2.text}
+              {page?.finalExpensePageCustomFields.finalExpenseSection3.columns.column2.button.button2.text}
             </Button>
           </a>
         </div>
@@ -165,7 +165,7 @@ const FinalExpensePage = () => {
       </Section>
 
       <Footer>
-          {page.disclaimers.disclaimer}
+          {page?.disclaimers.disclaimer}
       </Footer>
     </Layout>
   )
@@ -178,8 +178,8 @@ export const Head = () => {
   return (
     <>
       <PageHead
-        title={page.seo?.title}
-        description={page.seo?.metaDesc}/>
+        title={page?.seo?.title}
+        description={page?.seo?.metaDesc}/>
     </>
   )
 }

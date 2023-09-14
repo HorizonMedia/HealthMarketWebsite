@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 export const useFinalExpensePageQuery = () => {
   const data = useStaticQuery(graphql`
     query FinalExpenseQuery {
-      page: wpPage(databaseId: {eq: 9268}) {
+      page: wpPage(databaseId: {eq: 7517}) {
         id
         slug
         seo {
