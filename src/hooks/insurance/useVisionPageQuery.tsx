@@ -152,11 +152,9 @@ export const useVisionPageQuery = () => {
                             text
                         }
                         heroButton2 {
-                            link
                             text
                         }
                         heroButton3 {
-                            link
                             text
                         }
                     }
