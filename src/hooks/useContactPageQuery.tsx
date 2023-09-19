@@ -14,6 +14,13 @@ export const useContactPageQuery = () => {
         disclaimers {
           disclaimer
         }
+        contactPageCustomFields {
+          heading
+          section1 {
+            sectionHeading
+            sectionCta
+          }
+        }
         calloutsCustomField {
           isActive
           callouts {

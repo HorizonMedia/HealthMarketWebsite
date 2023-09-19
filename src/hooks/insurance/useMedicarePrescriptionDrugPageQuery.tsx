@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 export const useMedicarePrescriptionDrugPageQuery = () => {
     const data = useStaticQuery(graphql`
 query MedicarePrescriptionDrugPageQuery {
-  page: wpPage(databaseId: {eq: 8991}) {
+  page: wpPage(databaseId: {eq: 7352}) {
     medicarePrescriptionDrugPageCustomFields {
       heroDisclaimer
       medicarePrescriptionDrugSection1 {
