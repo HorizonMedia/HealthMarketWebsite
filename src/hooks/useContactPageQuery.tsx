@@ -15,10 +15,14 @@ export const useContactPageQuery = () => {
           disclaimer
         }
         contactPageCustomFields {
-          heading
           section1 {
+            sectionColor
             sectionHeading
-            sectionCta
+            sectionSubheading
+            sectionCta {
+              text
+              link
+            }
           }
         }
         calloutsCustomField {

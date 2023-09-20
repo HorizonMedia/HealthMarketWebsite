@@ -1,6 +1,11 @@
-import {css} from "@emotion/react";
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 
 export const PageStyles = css`
+  .contact-us-page > div:last-of-type > div.section > div:last-of-type  {
+    padding-top: 0;
+  }
+
   .contact.section {
     margin-top: 8.9rem;
   }
@@ -45,6 +50,21 @@ export const PageStyles = css`
     margin-bottom: 4rem;
   }
 
+  .phone-cta.hide-at-mobile {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-decoration: underline;
+
+    @media only screen and (min-width: 1025px) {
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+
   @media only screen and (max-width: 1440px) {
     .contact.section .section .inner .left h4 {
       font-size: 3.2rem;
@@ -56,9 +76,6 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 788px) {
-    .contact.section {
-      margin-top: 12.6rem;
-    }
 
     .contact.section .section .inner .left h4 {
       font-size: 2.4rem;
@@ -103,4 +120,101 @@ export const PageStyles = css`
       padding-bottom: 4rem;
     }
   }
+
+  @media only screen and (max-width: 1025px) {
+    .contact.section {
+      margin-top: 0px;
+    }
+  }
+`
+
+export const SectionOneInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const SectionOneSubheading = styled.div`
+  margin-bottom: 3.2rem;
+
+  h4 {
+    font-family: 'IvyPresto Display-SemiBold', serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #009FDA;
+  }
+
+  @media only screen and (min-width: 788px) {
+    h4 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+    h4 {
+      font-size: 65px;
+      line-height: 65px;
+    }
+  }
+`
+
+export const CalloutSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3.5rem;
+
+  &> div {
+    background-color: #FFFFFF;
+    max-width: 100%;
+  }
+
+  .callout > div:first-of-type {
+    border-bottom: none;
+  }
+
+  .callout > div:last-of-type {
+    display: none;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .callout > div:first-of-type {
+      border-bottom: 2px solid var(--color-accent-alt)
+    }
+
+    .callout > div:last-of-type {
+      display: block;
+    }
+
+    &> div {
+      flex: 1;
+      flex-basis: 0;
+      box-sizing: border-box;
+      calc(33.33% - 3.5rem);
+    }
+  }
+
+  @media only screen and (min-width: 1025px) and (max-width: 1650px) {
+    &> div {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    &> div h1 {
+      font-size: 8rem;
+    }
+  }
+`
+
+export const PageContainer = styled.div`
+
 `
