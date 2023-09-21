@@ -4,7 +4,7 @@ export const useFooterLPMenuQuery = () => {
   const data = useStaticQuery(graphql`
     query lpMenu {
       wpcontent {
-        menu(id: "1121", idType: DATABASE_ID) {
+        menu(id: "1087", idType: DATABASE_ID) {
           menuItems {
             nodes {
               id

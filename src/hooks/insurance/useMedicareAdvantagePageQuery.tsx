@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 export const useMedicareAdvantagePageQuery = () => {
   const data = useStaticQuery(graphql`
     query MedicareAdvantageQuery {
-      page: wpPage(databaseId: {eq: 9720}) {
+      page: wpPage(databaseId: {eq: 7960}) {
         id
         slug
         seo {

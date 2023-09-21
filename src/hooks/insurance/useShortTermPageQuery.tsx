@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 export const useShortTermPageQuery = () => {
   const data = useStaticQuery(graphql`
     query ShortTermQuery {
-      page: wpPage(databaseId: {eq: 9162}) {
+      page: wpPage(databaseId: {eq: 9283}) {
         id
         slug
         seo {
