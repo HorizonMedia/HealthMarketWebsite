@@ -1,4 +1,4 @@
-import React, {CSSProperties, FC, ReactNode} from "react"
+import React, { CSSProperties, FC, ReactNode } from "react"
 
 // Styles
 import {
@@ -25,19 +25,21 @@ interface Props {
   mobile?: String,
   link?: String,
   title: String,
-  children?: ReactNode
-  imgStyle?: CSSProperties | undefined
+  description?: String,
+  children?: ReactNode,
+  imgStyle?: CSSProperties | undefined,
   background?: String,
-  displayImage?: Boolean
+  displayImage?: Boolean,
 }
 
-const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title, children, imgStyle, background, displayImage=true }) => {
+
+const Card: FC<Props> = ({ image = null, icon = null, mobile = null, link = null, title, description = null, children, imgStyle, background, displayImage = true }) => {
   const imageClass = (displayImage) ? ((icon !== null) ? "icon" : "image") : "no-image"
 
   return (
     <>
       <Wrapper className={`card hide-at-mobile ${imageClass} ${background}`} href={link} onClick={routeLink}>
-        {(displayImage) ? (
+        {(displayImage && (image !== null || icon !== null)) ? (
           <Header className="card-header">
             <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
               <Img
@@ -45,31 +47,35 @@ const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title,
                 placeholder="BLURRED"
                 maxWidth={(image === null) ? 128 : null}
                 maxHeight={(image === null) ? 98 : null}
-                alt="Card Icon Image"
-                style={{...imgStyle}}
+                alt="Card Image"
+                style={{ ...imgStyle }}
               />
             </ImgContainer>
           </Header>
-        ) : null }
+        ) : null}
+
         <Content className="card-content">
           <h4 className="hide-at-mobile">{title}</h4>
+          <p>{description}</p>
           {children}
         </Content>
       </Wrapper>
       <MobileWrapper className={`card show-at-mobile ${imageClass} ${background}`} href={link} onClick={routeLink}>
         <Header className="card-header" onClick={toggleOpenState}>
-          {(displayImage) ? (
+          {(displayImage && (image !== null || mobile !== null || icon !== null)) ? (
             <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
               <Img
                 src={(image !== null) ? image : (mobile != null) ? mobile : icon}
                 placeholder="BLURRED"
                 maxWidth={(image === null) ? 128 : null}
                 maxHeight={(image === null) ? 98 : null}
-                alt="Card Icon Image"
+                alt="Card Image"
               />
             </ImgContainer>
-          ) : null }
+          ) : null}
+
           <h4 className="show-at-mobile">{title}</h4>
+          <p>{description}</p>
         </Header>
         <Content className="card-content">
           {children}
