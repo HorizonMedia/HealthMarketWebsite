@@ -20,6 +20,8 @@ import Card from "../../../components/Cards/Card";
 import Footer from "../../../components/Footer";
 import PageHead from "../../../components/PageHead";
 import Layout from "../../../components/Layout";
+import Countdown from "../../../components/Countdown";
+import { CountdownWrapper } from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 const IndividualPage = () => {
     const { page } = useIndividualPageQuery();
@@ -52,6 +54,9 @@ const IndividualPage = () => {
                     btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
                     inputId="individualPageHeroLocation"
                     footerContent={page.pageHeroFields.callUs} />
+                    <CountdownWrapper>
+                    <Countdown date={1698811200000}/>
+                    </CountdownWrapper>
             </Hero>
             <Section
                 color={page.individualPageCustomField.individualSection1.color}
@@ -63,7 +68,9 @@ const IndividualPage = () => {
             <div className='plan' style={{ background: 'rgb(244, 250, 253)' }}>
                 <div className="affordable-plans">
                     <h1>{page.individualPageCustomField.individualSection2.title}</h1>
-                    <p>{page.individualPageCustomField.individualSection2.statement}</p>
+                     <p>
+                     {/* Removed for in-season change {page.individualPageCustomField.individualSection2.statement */}
+                    </p> 
                 </div>
 
                 <div className='tier-container'>
@@ -180,22 +187,6 @@ const IndividualPage = () => {
                 </div>
             </div>
             </TierWrapper>
-
-            
-            {/* For NMB-96
-            
-                <div style={{ textAlign: 'center', background: 'rgb(244, 250, 253)' }}>
-                <h2 style={{ color: '#009FDA', paddingTop: '4rem' }}>{page.individualPageCustomField.individualSection3.heading}</h2>
-                <p style={{ paddingTop: '1rem', textAlign: 'left', lineHeight: '2rem' }}>{page.individualPageCustomField.individualSection3.subHeading}</p>
-
-                <div className="full-rounded" style={{ textAlign: "center" }}>
-                    <a href={page.individualPageCustomField.individualSection3.cta.link} onClick={routeLink}>
-                        <Button background="accent-alt" border="light" color="light">
-                            {page.individualPageCustomField.individualSection3.cta.text}
-                        </Button>
-                    </a>
-                </div>
-            </div> */}
 
             <Section
                 color={page.individualPageCustomField.individualSection4.color}
