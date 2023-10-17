@@ -573,7 +573,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                               title={card.title}
                               list={(card.list) ? card.list : null}
                               background={card.backgroundColor}
-                              displayImage={card.displayCardImage}>
+                              displayImage={card.displayCardImage}
+                              nonClickable={true}>
                               <p dangerouslySetInnerHTML={{ __html: card.content }} />
                             </Card>
                           )
@@ -609,7 +610,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                               title={card.title}
                               list={(card.list) ? card.list : null}
                               background={card.backgroundColor}
-                              displayImage={card.displayCardImage}>
+                              displayImage={card.displayCardImage}
+                              nonClickable={true}>
                               <p dangerouslySetInnerHTML={{ __html: card.content }} />
                             </Card>
                           )

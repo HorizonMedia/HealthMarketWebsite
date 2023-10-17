@@ -30,15 +30,22 @@ interface Props {
   imgStyle?: CSSProperties | undefined,
   background?: String,
   displayImage?: Boolean,
+  nonClickable?: Boolean,
 }
 
 
-const Card: FC<Props> = ({ image = null, icon = null, mobile = null, link = null, title, description = null, children, imgStyle, background, displayImage = true }) => {
+const Card: FC<Props> = ({ image = null, icon = null, mobile = null, link = null, title, description = null, children, imgStyle, background, displayImage = true, nonClickable = false }) => {
   const imageClass = (displayImage) ? ((icon !== null) ? "icon" : "image") : "no-image"
 
   return (
     <>
-      <Wrapper className={`card hide-at-mobile ${imageClass} ${background}`} href={link} onClick={routeLink}>
+      <Wrapper
+        className={`card hide-at-mobile ${imageClass} ${background}`}
+        {...(!nonClickable && {
+          href: link,
+          onClick: routeLink
+        })}
+      >
         {(displayImage && (image !== null || icon !== null)) ? (
           <Header className="card-header">
             <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
@@ -60,7 +67,13 @@ const Card: FC<Props> = ({ image = null, icon = null, mobile = null, link = null
           {children}
         </Content>
       </Wrapper>
-      <MobileWrapper className={`card show-at-mobile ${imageClass} ${background}`} href={link} onClick={routeLink}>
+      <MobileWrapper
+        className={`card show-at-mobile ${imageClass} ${background}`}
+        {...(!nonClickable && {
+          href: link,
+          onClick: routeLink
+        })}
+      >
         <Header className="card-header" onClick={toggleOpenState}>
           {(displayImage && (image !== null || mobile !== null || icon !== null)) ? (
             <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
